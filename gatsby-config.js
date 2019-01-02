@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: "mikko.io",
     author: "Mikko Pitkänen",
-    description: `Developer. Financial Analyst.`,
+    description: `Developer. Future Financial Analyst.`,
     siteUrl: "http://mikko.io",
     social: {
       twitter: `pitkane`,
@@ -10,6 +14,14 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `mikko-io`,
+        accessToken: `${process.env.PRISMIC_API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

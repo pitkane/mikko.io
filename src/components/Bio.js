@@ -28,7 +28,7 @@ function Bio() {
               }}
             /> */}
             <p>
-              <strong>{author}</strong>. Developer. Financial Analyst.
+              <strong>{author}</strong>. Developer. Future Financial Analyst.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>Twitter.</a>
               {` `}
