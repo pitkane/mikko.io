@@ -55,6 +55,7 @@ const bioQuery = graphql`
         author
         social {
           twitter
+          github
         }
       }
     }
